@@ -21,7 +21,21 @@ fn add_n_inplace(v: &mut Vec<i32>, n: i32) {
 }
 
 fn dedup(v: &mut Vec<i32>) {
-    unimplemented!()
+    let mut dict = HashSet::new();
+    let mut newV = Vec::new();
+    for i in 0..v.len() {
+        if dict.contains(&v[i]) {
+            continue;
+        } else {
+            // v.remove(i);
+            dict.insert(v[i]);
+            newV.push(v[i]);
+        }
+    }
+    v.clear();
+    for i in 0..newV.len() {
+        v.push(newV[i]);
+    }
 }
 
 #[cfg(test)]
