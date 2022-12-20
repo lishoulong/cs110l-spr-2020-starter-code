@@ -14,6 +14,23 @@ fn add_n(v: Vec<i32>, n: i32) -> Vec<i32> {
     retv
 }
 
+fn test_n() {
+    let v = vec!["1", "2", "3"];
+    for x in v {
+        println!("{}", x);
+    }
+    println!("{:?}", v);
+    // can borrow
+    // for x in &v {
+    //     println!("{}", x);
+    // }
+    // println!("{:?}", v);
+
+    let str = String::from("hello");
+    let str2 = str;
+    println!("hi {}", str2);
+}
+
 fn add_n_inplace(v: &mut Vec<i32>, n: i32) {
     for i in 0..v.len() {
         v[i] = v[i] + n;
